@@ -8,10 +8,6 @@ import java.io.Console;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-/**
- * Created by ozymandias on 22/03/18.
- */
-
 public class Steganography {
     private BufferedImage picture;
     private int[] pixels;
@@ -44,7 +40,6 @@ public class Steganography {
         }
         finalSize = Integer.parseInt(binSize, 2);
 	System.out.println("Tamaño payload: "+finalSize);
-        //Log.d("Tamaño payload", ""+finalSize);
         return finalSize;
     }
 
@@ -152,7 +147,7 @@ public class Steganography {
 		// System.out.println("Introduce texto a esconder:");
 		// String text = c.readLine();
 		BufferedImage finalPic = ImageIO.read(new File(args[1]));
-		stego.hide(finalPic, "este es el texto para ocultare");
+		stego.hide(finalPic, "This is the text to be hidden");
 		ImageIO.write(finalPic, "PNG", new File("resul.png"));
 	    }
 	    else if (args[0].equals("reveal")){

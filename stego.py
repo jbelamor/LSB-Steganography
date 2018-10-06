@@ -80,7 +80,7 @@ class Stego:
             print(output_path)
             final_pic.save(output_path + '/' + new_path + '.png', 'PNG')
         else:
-            final_pic.save(self.im.filename + '.stegued', 'PNG')
+            final_pic.save(self.im.filename.split('.')[0] +'_output' + '.png', 'PNG')
         final_pic.close()
         self.im.close()
 
@@ -124,8 +124,5 @@ class Stego:
 
 
 
-# st=Stego('new.jpg')
-# # st2=Stego('new.png')
-# st2=Stego('../resul.png')
-# # st.hide(st.get_payload_bins_from_file('test_payload.txt'))
-# st2.reveal()
+st=Stego('test.png')
+st.hide(st.get_payload_bins_from_file('test_payload.txt'))
